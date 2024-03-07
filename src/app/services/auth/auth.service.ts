@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {AuthenticationRequest} from "../../interfaces/authenticate-request";
 import {catchError, map, Observable} from "rxjs";
+import {RegisterRequest} from "../../interfaces/register-request";
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,17 @@ export class AuthService {
       })
     );
   }
-
+  register(registerRequest: RegisterRequest): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/register`, registerRequest).pipe(
+      map(response => {
+        localStorage.setItem('access_token', response.access_token);
+        return response;
+      }),
+      catchError(error => {
+        throw error;
+      })
+    );
+  }
   isLoggedIn(): boolean {
     return !!localStorage.getItem('access_token');
   }
