@@ -8,6 +8,7 @@ import {JobOffersComponent} from "./job-offers/job-offers.component";
 import {ContactUsComponent} from "./contact-us/contact-us.component";
 import {ApplyToJobComponent} from "./apply-to-job/apply-to-job.component";
 import {CompaniesComponent} from "./companies/companies.component";
+import {NotFoundComponent} from "./not-found/not-found.component";
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -19,6 +20,7 @@ export const routes: Routes = [
   { path: 'contact-us', component:ContactUsComponent },
   { path: 'apply-to-job', component:ApplyToJobComponent },
   { path: 'companies', component:CompaniesComponent },
+  { path: 'not-found', component:NotFoundComponent },
   { path: 'hi', component: HiComponent },
 
 
