@@ -10,6 +10,7 @@ import {ApplyToJobComponent} from "./apply-to-job/apply-to-job.component";
 import {CompaniesComponent} from "./companies/companies.component";
 import {NotFoundComponent} from "./not-found/not-found.component";
 import {NotAuthorizedComponent} from "./not-authorized/not-authorized.component";
+import {ForbiddenComponent} from "./forbidden/forbidden.component";
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -23,6 +24,7 @@ export const routes: Routes = [
   { path: 'companies', component:CompaniesComponent },
   { path: 'not-found', component:NotFoundComponent },
   { path: 'not-authorized', component:NotAuthorizedComponent },
+  { path: 'forbidden', component:ForbiddenComponent },
   { path: 'hi', component: HiComponent },
 
 
