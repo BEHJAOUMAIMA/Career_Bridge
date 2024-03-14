@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         white: "#fff",
+        beigeWhite : "#f4f4f5",
         snow: "#fffcf7",
         gainsboro: {
           "100": "#e2e4e9",
