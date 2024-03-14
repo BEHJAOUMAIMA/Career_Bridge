@@ -17,7 +17,7 @@ export const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent },
   { path: 'job-offers', component:JobOffersComponent },
   { path: 'contact-us', component:ContactUsComponent },
-  { path: 'apply-to-jpb', component:ApplyToJobComponent },
+  { path: 'apply-to-job', component:ApplyToJobComponent },
   { path: 'companies', component:CompaniesComponent },
   { path: 'hi', component: HiComponent },
 
