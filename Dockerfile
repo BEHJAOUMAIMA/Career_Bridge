@@ -1,10 +1,23 @@
-FROM node:20.11.1 as angular
+FROM node:latest as build
+
 WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm ci
+
+COPY package*.json ./
+
+RUN npm install -g npm@latest
+
+RUN npm install
+
+RUN npm install -g @angular/cli
+
 COPY . .
-RUN npm run build --prod
+
+RUN ng build --configuration=production
 
 FROM nginx:latest
-COPY nginx-custom.conf /etc/nginx/conf.d/default.conf
-COPY --from=angular /app/dist/career-bridge /usr/share/nginx/html
+
+COPY --from=build /app/dist/career-bridge /usr/share/nginx/html
+
+EXPOSE 80
+
+
