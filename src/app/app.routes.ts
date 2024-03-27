@@ -12,6 +12,7 @@ import {NotFoundComponent} from "./not-found/not-found.component";
 import {NotAuthorizedComponent} from "./not-authorized/not-authorized.component";
 import {ForbiddenComponent} from "./forbidden/forbidden.component";
 import {TrainingComponent} from "./training/training.component";
+import {DashboardLayoutComponent} from "./dashboard-layout/dashboard-layout.component";
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -28,6 +29,11 @@ export const routes: Routes = [
   { path: 'forbidden', component:ForbiddenComponent },
   { path: 'training', component:TrainingComponent },
   { path: 'hi', component: HiComponent },
+  { path: 'dashboard',
+    component: DashboardLayoutComponent,
+    children : [
 
+    ]
+  },
 
 ];
