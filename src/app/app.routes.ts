@@ -13,6 +13,9 @@ import {NotAuthorizedComponent} from "./not-authorized/not-authorized.component"
 import {ForbiddenComponent} from "./forbidden/forbidden.component";
 import {TrainingComponent} from "./training/training.component";
 import {DashboardLayoutComponent} from "./dashboard-layout/dashboard-layout.component";
+import {DashPrincipalComponent} from "./dashboard-layout/dash-principal/dash-principal.component";
+import {UsersDashComponent} from "./dashboard-layout/users-dash/users-dash.component";
+import {AddUserComponent} from "./dashboard-layout/add-user/add-user.component";
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -29,10 +32,14 @@ export const routes: Routes = [
   { path: 'forbidden', component:ForbiddenComponent },
   { path: 'training', component:TrainingComponent },
   { path: 'hi', component: HiComponent },
+
   { path: 'dashboard',
     component: DashboardLayoutComponent,
     children : [
-
+      { path: '', redirectTo: '/dashboard/welcome', pathMatch: 'full' },
+      {path:'welcome', component:DashPrincipalComponent},
+      {path:'users', component:UsersDashComponent},
+      {path:'add-user', component:AddUserComponent}
     ]
   },
 

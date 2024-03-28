@@ -1,0 +1,66 @@
+<div class="container" style="width: 1500px !important;">
+
+  <div class="row flex flex-row justify-between items-center mx-auto">
+    <h1>Utilisateurs</h1>
+    <a  type="button" routerLink="/dashboard/add-user"  class="no-underline  bg-blue text-white px-5  text-sm py-3 rounded-md flex flex-row items-center"><i class="bx bx-plus me-2"></i> Ajouter Utilisateur</a>
+  </div>
+  <div class="row flex flex-col my-9 text-sm mx-auto">
+    <p>Gérez efficacement les profils d'utilisateurs, attribuez des rôles et des permissions, et suivez les activités des utilisateurs sur cette page dédiée à la gestion des comptes</p>
+  </div>
+  <div class="row flex flex-row mx-auto mt-7">
+
+
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+      <table class="text-sm w-[1500px]  text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-center text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+          <th scope="col" class="px-6 py-3">
+            Id
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Nom
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Prénom
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Email
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Role
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Action
+          </th>
+        </tr>
+        </thead>
+        <tbody class="text-center">
+        <tr *ngFor="let user of users" class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            {{ user.id }}
+          </th>
+          <td class="px-6 py-4">
+            {{ user.lastName }}
+          </td>
+          <td class="px-6 py-4">
+            {{ user.firstName }}
+          </td>
+          <td class="px-6 py-4">
+            {{ user.email }}
+          </td>
+          <td class="px-6 py-4">
+            {{ user.role.roleType }}
+          </td>
+          <td class="px-6 py-4">
+            <a href="#" class="text-3xl no-underline text-teal-600"><i class="bx bxs-eyedropper"></i></a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+
+
+</div>

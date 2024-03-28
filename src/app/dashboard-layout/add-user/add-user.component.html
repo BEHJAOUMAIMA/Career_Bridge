@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row w-[1500px] flex flex-row justify-between items-center mx-auto mt-12 mb-16">
+    <h2>Ajouter un Utilisateur</h2>
+    <a class="px-6 py-3 bg-blue text-white text-sm text-center rounded-md no-underline" type="button" routerLink="/dashboard/users">Retour à la page précédente</a>
+  </div>
+  <form (ngSubmit)="onSubmit()">
+    <div class="row w-[1500px] mx-auto flex flex-row gap-2 justify-between items-center mb-8">
+      <div class="col-span-6 w-[740px]">
+        <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Prénom</label>
+        <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Saisissez le prénom de l'utilisateur" [(ngModel)]="userRequest.firstName" name="firstName" />
+      </div>
+      <div class="col-span-6 w-[740px]">
+        <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nom</label>
+        <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Saisissez le Nom de l'utilisateur" required [(ngModel)]="userRequest.lastName" name="lastName" />
+      </div>
+    </div>
+    <div class="row w-[1500px] mx-auto flex flex-row gap-2 justify-between items-center mb-8">
+      <div class="col-span-6 w-[740px]">
+        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Adresse Email</label>
+        <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Exemple : example@domain.com" required [(ngModel)]="userRequest.email" name="email" />
+      </div>
+      <div class="col-span-6 w-[740px]">
+        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+        <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Saisissez un mot de passe pour l'utilisateur" required [(ngModel)]="userRequest.password" name="password" />
+      </div>
+    </div>
+    <div class="row w-[1500px] mx-auto flex flex-row gap-2 justify-between items-center mb-8">
+      <div class="col-span-12 w-[1490px]">
+        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Assigner un Role</label>
+        <div class="row flex flex-row justify-start gap-[100px] items-center my-7">
+          <div class="col-span-4" *ngFor="let role of roles">
+            <input type="radio" name="role" [(ngModel)]="selectedRole" [value]="role.roleType">
+            {{ role.roleType }}
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <button type="submit" class="flex mx-auto w-[300px] justify-center items-center font-bold px-6 py-3 bg-blue text-white text-sm text-center rounded-md">Sauvegarder</button>
+
+    <div *ngIf="successMessage" class="text-green-600 mt-4">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="text-red-600 mt-4">{{ errorMessage }}</div>
+  </form>
+
+</div>

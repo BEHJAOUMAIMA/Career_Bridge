@@ -21,6 +21,7 @@ module.exports = {
           "200": "#d4d4e6",
         },
         blue: "#651fff",
+        blue2:"#1f2937",
         blueviolet: "#8c45ff",
         lightslategray: "#838696",
         black: "#000",
@@ -90,7 +91,9 @@ module.exports = {
   corePlugins: {
     preflight: false,
   },
-  plugins: [require("tw-elements/plugin.cjs")],
+  plugins: [
+    require("tw-elements/plugin.cjs"),
+  ],
   darkMode: "class"
 };
 

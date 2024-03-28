@@ -15,6 +15,6 @@ export class FooterComponent {
   constructor(private router: Router) {}
 
   isDashboardPage(): boolean {
-    return this.router.url === '/dashboard';
+    return this.router.url.startsWith('/dashboard');
   }
 }
